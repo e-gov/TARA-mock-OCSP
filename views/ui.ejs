@@ -1,0 +1,42 @@
+<!Doctype html>
+<html>
+<head>
+    <script type ="text/javascript">
+        window.onload = getCurrentDelay();
+
+        function postDelay(){
+            const timeInSeconds = document.getElementById("delay").value;
+            if(isNaN(timeInSeconds)){
+                alert("Please only post numbers");
+                return;
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if(xhttp.readyState == XMLHttpRequest.DONE){
+                    document.getElementById("current_delay").innerHTML = xhttp.responseText;
+                }
+            }
+            const timeInMs = timeInSeconds * 1000;
+            xhttp.open("GET", "/submit_delay?delayms=" + timeInMs, true);
+            xhttp.send();
+        }
+        function getCurrentDelay() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if(xhttp.readyState == XMLHttpRequest.DONE){
+                    document.getElementById("current_delay").innerHTML = "Current delay(seconds): " + xhttp.responseText;
+                }
+            }
+            xhttp.open("GET", "/get_delay", true);
+            xhttp.send();
+        }
+    </script>
+</head>
+<body>
+<form>
+    Delay(seconds):<input type="text" name ="delay" id = "delay">
+    <input type = "button" value = "submit" onclick = "postDelay()"/>
+    <p id="current_delay">Current delay(seconds): </p>
+</form>
+</body>
+</html>
