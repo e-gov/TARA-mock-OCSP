@@ -1,10 +1,8 @@
 //instructions on how these headers and the response string were made can be found in proxy.js
-
 var express = require('express');
 var app = express();
 var http = require('http');
 var httpProxy = require('http-proxy');
-var asn1 = require("asn1-ber");
 const fs = require('fs');
 
 //set view engine
@@ -51,8 +49,6 @@ app.get('/get_delay', (req, res) => {
 app.listen(80, () => {
     console.log("Server running on port " + 80);
 });
-
-var asn1 = require("asn1-ber");
 
 app.post('/ocsp', async (req, res) => {
     console.log("OCSP Post received");
