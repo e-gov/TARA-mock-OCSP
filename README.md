@@ -15,3 +15,7 @@ In order to tell the TARA-SERVER to make querries to this URL change ocsp.servic
 
 IF at some point the response from this server should no longer work go into proxy.js file and run it
 to see what the new response would have to be. If needed remove the .setHeader lines and replace them with the necessary ones.
+
+
+To run tests, open the jmeter script for id card testing.
+In step "Id kaardisertifikaadi saatmine makettrakenduse serverisse" input a valid client certificate that has been registered in https://demo.sk.ee/upload_cert/index.php
