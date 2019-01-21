@@ -1,4 +1,7 @@
 # DEPRECATED
+
+Does not work with TARA & ID-card configuration, please use: https://github.com/e-gov/mock-ocsp.
+
 1. Clone repo
 2. From command line: 
 `npm install`
