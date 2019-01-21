@@ -1,4 +1,4 @@
-# ocspProxyMock
+# DEPRECATED
 1. Clone repo
 2. From command line: 
 `npm install`
